@@ -1,8 +1,11 @@
 # kei_ase_wb55_files
-Zdrojové kody pro STM32WB55 používané v KEI/ASE
+Zdrojové kody pro STM32WB55 používané v KEI/ASE.
 
-Zatím pracovní pro I2C, startovací verze 2021-04-07.
+Inicializace je teoreticky použitelná i pro STM32F411 (je tam větvení), ale funkce pro přenos dat jsou už jen pro WB55 (resp. registry podobné L4).
+
+Zatím pracovní pro I2C1, startovací verze 2021-04-07.
 Předpokládá další soubory s inicializací GPIO, stdio-UART apod.
+Funkce ReadByte (jeden byte z jednoho registru) je varianta s restart-condition (defaultní). Funkce ReadByteNR udělá po zápisu adresy registru STOP-condition a následuje "jen" čtení té hodnoty.
 
 Příklad použití pro i2c_scan:
 
